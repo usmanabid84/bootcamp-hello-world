@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy Website 
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 12
       - name: Install Surge
-        run: npm install -g surge ${{secrets.SURGE_TOKEN}}
+        run: npm install -g surge 
       - name: Run Surge
-        run: surge ./  usman_1.surge.sh --token
+        run: surge ./  usman_1.surge.sh --token ${{secrets.SURGE_TOKEN}}
       
